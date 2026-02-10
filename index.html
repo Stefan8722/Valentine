@@ -84,10 +84,18 @@
   <!-- Inima mare -->
   <div class="big-heart" id="bigHeart">❤️</div>
 
-  <!-- Muzica -->
-  <audio id="loveSong" preload="auto">
-    <source src="love.mp3" type="audio/mpeg">
-  </audio>
+  <!-- YouTube player ascuns -->
+  <div id="ytWrap" style="display:none;">
+    <iframe
+      id="ytPlayer"
+      width="0"
+      height="0"
+      src=""
+      frameborder="0"
+      allow="autoplay; encrypted-media"
+      allowfullscreen>
+    </iframe>
+  </div>
 
   <!-- Card -->
   <div class="card">
@@ -110,7 +118,8 @@
     const noBtn  = document.getElementById('noBtn');
     const result = document.getElementById('result');
     const heart  = document.getElementById('bigHeart');
-    const song   = document.getElementById('loveSong');
+    const yt     = document.getElementById('ytPlayer');
+    const ytWrap = document.getElementById('ytWrap');
 
     yesBtn.addEventListener('click', () => {
       result.innerHTML = `
@@ -123,8 +132,9 @@
 
       heart.classList.add('show');
 
-      song.volume = 0.85;
-      song.play().catch(()=>{});
+      // pornește melodia de pe YouTube
+      yt.src = "https://www.youtube.com/embed/MuW6nYTZtIM?autoplay=1&controls=0&modestbranding=1";
+      ytWrap.style.display = "block";
 
       yesBtn.disabled = true;
       noBtn.disabled = true;

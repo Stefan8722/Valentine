@@ -3,7 +3,7 @@
 <head>
   <meta charset="utf-8" />
   <meta name="viewport" content="width=device-width, initial-scale=1" />
-  <title>💘 Pentru Soțul Meu Frumos</title>
+  <title>❤️ Pentru Ștefan, soțul meu frumos</title>
 
   <style>
     body{
@@ -41,19 +41,31 @@
       border-radius:24px;
       padding:28px 22px;
       text-align:center;
-      max-width:560px;
+      max-width:680px;
       z-index:1;
       box-shadow:0 20px 60px rgba(0,0,0,.18);
+      max-height:90vh;
+      overflow-y:auto;
     }
 
-    h1{ margin-top:0; font-size:32px; }
-    p{ font-size:17px; }
+    h1{
+      margin:0 0 12px;
+      font-size:28px;
+      color:#be123c;
+    }
+
+    .intro{
+      font-size:16px;
+      line-height:1.6;
+      text-align:left;
+      margin:0 0 14px;
+    }
 
     .buttons{
       display:flex;
       gap:12px;
       justify-content:center;
-      margin-top:18px;
+      margin-top:12px;
       flex-wrap:wrap;
     }
 
@@ -65,35 +77,50 @@
       font-weight:700;
       cursor:pointer;
       box-shadow:0 10px 22px rgba(0,0,0,.12);
+      transition:.3s;
     }
 
     #yesBtn{ background:#22c55e; color:white; }
     #noBtn{ background:#ef4444; color:white; position:relative; }
 
+    .fade-out{ animation: fadeOut .4s forwards; }
+    @keyframes fadeOut{ to{ opacity:0; transform:scale(.9); } }
+
     .result{
       display:none;
-      margin-top:20px;
-      font-size:18px;
-      font-weight:700;
+      margin-top:18px;
+      font-size:17px;
+      font-weight:600;
+      line-height:1.55;
+      text-align:left;
+      border-top:1px solid #ffffff80;
+      padding-top:16px;
     }
     .result.show{ display:block; }
 
-    /* Player vizibil (mic) */
+    .pulse-love{
+      margin-top:18px;
+      font-size:26px;
+      font-weight:900;
+      color:#e11d48;
+      text-align:center;
+      animation: lovePulse 1.1s infinite ease-in-out;
+    }
+    @keyframes lovePulse{
+      0%,100%{ transform:scale(1); opacity:1; }
+      50%{ transform:scale(1.12); opacity:.85; }
+    }
+
     .playerWrap{
       display:none;
       margin:16px auto 0;
       width:min(460px, 92vw);
-      aspect-ratio: 16/9;
+      aspect-ratio:16/9;
       border-radius:18px;
       overflow:hidden;
       box-shadow:0 14px 30px rgba(0,0,0,.14);
-      border:1px solid #ffffff80;
     }
-    .playerWrap iframe{
-      width:100%;
-      height:100%;
-      border:0;
-    }
+    .playerWrap iframe{ width:100%; height:100%; border:0; }
 
     .musicRow{
       display:none;
@@ -103,7 +130,6 @@
       flex-wrap:wrap;
     }
     .linkBtn{
-      display:inline-block;
       text-decoration:none;
       padding:12px 16px;
       border-radius:14px;
@@ -119,9 +145,34 @@
   <div class="big-heart" id="bigHeart">❤️</div>
 
   <div class="card">
-    <h1>Vrei să fii valentinul meu, Ștefan? 💖</h1>
-    <p>
-      Bărbatul și soțul meu minunat și superb, de când ai apărut în viața mea, totul a început să prindă culoare și să aibă sens. Alături de tine trăiesc cea mai frumoasă poveste. Mi-ai arătat ce înseamnă dragostea și iubirea sinceră și adevărată încă din primul moment. Ești motivul pentru care zâmbesc zilnic, motivul pentru care mă trezesc și adorm zâmbind, motivul pentru care sufletul meu zâmbește și este fericit. Ai reușit să faci fericit copilul din mine. Dragostea mea frumoasă, doar tu reușești să mă faci să mă simt fericit, împlinit și iubit. Ești iubirea vieții mele la care am visat mereu. Ești inima și sufletul meu frumos. Ești totul meu. Ești persoana alături de care vreau să îmbătrânesc și să am cea mai frumoasă familie. Te iubesc cum n-am iubit vreodată, Te iubesc nespus de mult, Te iubesc enorm de mult, Te iubesc dincolo de infinit, Te iubesc cel mai mult pe lumea asta bărbatul și soțul meu frumos și perfect. ✨
+    <h1>Bărbatul și soțul meu minunat și superb ❤️❤️❤️🥹🥹❤️❤️❤️🥹🥹❤️❤️❤️🥹🥹❤️❤️❤️🥹🥹❤️❤️❤️</h1>
+
+    <!-- TEXTUL DIN PRIMA PARTE (înainte de DA/NU) -->
+    <p class="intro">
+      De când ai apărut în viața mea, totul a început să prindă culoare și să aibă sens.
+      Alături de tine trăiesc cea mai frumoasă și minunată poveste fără sfârșit.
+      Mi-ai arătat ce înseamnă dragostea și iubirea sinceră și adevărată încă din primul moment,
+      îmi arăți asta zilnic.<br><br>
+
+      Ești motivul pentru care zâmbesc zilnic, motivul pentru care mă trezesc și adorm zâmbind,
+      motivul pentru care sufletul meu zâmbește și este fericit.
+      Ai reușit să faci fericit copilul din mine.<br><br>
+
+      Dragostea mea frumoasă, doar tu reușești să mă faci să mă simt fericit, împlinit și iubit în fiecare secundă.
+      Meriți tot ce e frumos pe lumea asta, iar eu o să fac tot posibilul să îți ofer tot ce dorești
+      fiindcă vreau să te văd fericit zilnic.<br><br>
+
+      Doar de tine am nevoie, iubirea mea superbă. Alături de tine am tot ce vreau.
+      Voi fi lângă tine mereu până în ultimele secunde de viață.
+      În brațele tale mă simt cel mai în siguranță și cel mai fericit om din lume.
+      Ești locul unde inima mea se simte acasă.<br><br>
+
+      Ești iubirea vieții mele la care am visat mereu. Ești inima și sufletul meu frumos.
+      <strong>Ești totul meu.</strong><br><br>
+
+      Ești persoana alături de care vreau să îmbătrânesc și să am cea mai frumoasă familie.
+      Te iubesc cum n-am iubit vreodată, te iubesc nespus de mult, te iubesc enorm de mult,
+      te iubesc dincolo de infinit, te iubesc cel mai mult pe lumea asta bărbatul și soțul meu frumos și perfect ❤️❤️❤️🥹🥹❤️❤️❤️🥹🥹❤️❤️❤️🥹🥹❤️❤️❤️🥹🥹❤️❤️❤️
     </p>
 
     <div class="buttons">
@@ -129,15 +180,14 @@
       <button id="noBtn">NU 🙈</button>
     </div>
 
+    <!-- TEXTUL CARE APARE DUPĂ CE APASĂ DA -->
     <div class="result" id="result"></div>
 
-    <!-- Butoane fallback pentru muzică -->
     <div class="musicRow" id="musicRow">
       <button id="playMusicBtn">Pornește melodia 🎶</button>
       <a class="linkBtn" id="openYT" target="_blank" rel="noopener">Deschide în YouTube ▶</a>
     </div>
 
-    <!-- Player YouTube mic (vizibil) -->
     <div class="playerWrap" id="playerWrap">
       <iframe
         id="ytPlayer"
@@ -160,40 +210,49 @@
     const playerWrap = document.getElementById('playerWrap');
     const ytPlayer   = document.getElementById('ytPlayer');
 
-    const musicRow   = document.getElementById('musicRow');
+    const musicRow = document.getElementById('musicRow');
     const playMusicBtn = document.getElementById('playMusicBtn');
     const openYT = document.getElementById('openYT');
     openYT.href = YT_URL;
 
-    function startYouTube() {
-      // Player vizibil -> cel mai compatibil pe mobile
+    function startYouTube(){
       playerWrap.style.display = "block";
       ytPlayer.src = `https://www.youtube.com/embed/${VIDEO_ID}?autoplay=1&playsinline=1&rel=0`;
     }
 
     yesBtn.addEventListener('click', () => {
       result.innerHTML = `
-        YEEES! 💞<br>
-        Ștefan, de azi inima mea te alege pe tine ❤️<br>
-        Vreau să fim noi doi, cu răbdare, zâmbete
-        și multă iubire ✨
+        Te iubesc în toate modurile posibile bebițul meu frumos și drag ❤️❤️❤️🥹🥹❤️❤️❤️🥹🥹❤️❤️❤️🥹🥹❤️❤️❤️🥹🥹❤️❤️❤️<br><br>
+
+        Stefan, da-ul tău înseamnă mai mult decât pot spune.<br><br>
+
+        Ți-aș da și inima din piept ca să fii tu bine, să simți cât de sincer te iubesc,
+        căci fiecare bătaie a ei spune numele tău.<br><br>
+
+        Ți-aș da și ochii mei ca să vezi că în ei ești doar tu,
+        doar zâmbetul tău, doar ochii tăi,
+        cei care îmi luminează fiecare zi.<br><br>
+
+        Și dacă aș putea, ți-aș da tot ce am doar ca să îți văd fericirea strălucind mereu,
+        pentru că tu ești sufletul meu 💞<br><br>
+
+        <div class="pulse-love">Te iubesc ❤️</div>
       `;
       result.classList.add('show');
       heart.classList.add('show');
 
-      // încercăm să pornim
       startYouTube();
-
-      // arătăm și fallback-ul (în caz că telefonul tot blochează)
       musicRow.style.display = "flex";
 
+      noBtn.classList.add("fade-out");
+      setTimeout(() => noBtn.style.display = "none", 400);
+
       yesBtn.disabled = true;
-      noBtn.disabled = true;
+
+      result.scrollIntoView({ behavior: "smooth", block: "start" });
     });
 
-    playMusicBtn.addEventListener('click', () => {
-      startYouTube();
-    });
+    playMusicBtn.addEventListener('click', startYouTube);
 
     function moveNo(){
       const x = Math.random() * (window.innerWidth - 120);
@@ -207,4 +266,3 @@
   </script>
 </body>
 </html>
-

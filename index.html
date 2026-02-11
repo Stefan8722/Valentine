@@ -3,7 +3,7 @@
 <head>
   <meta charset="utf-8" />
   <meta name="viewport" content="width=device-width, initial-scale=1" />
-  <title>💘 Pentru Ștefan</title>
+  <title>💘 Pentru Soțul Meu Frumos</title>
 
   <style>
     body{
@@ -41,7 +41,7 @@
       border-radius:24px;
       padding:28px 22px;
       text-align:center;
-      max-width:520px;
+      max-width:560px;
       z-index:1;
       box-shadow:0 20px 60px rgba(0,0,0,.18);
     }
@@ -54,6 +54,7 @@
       gap:12px;
       justify-content:center;
       margin-top:18px;
+      flex-wrap:wrap;
     }
 
     button{
@@ -76,33 +77,53 @@
       font-weight:700;
     }
     .result.show{ display:block; }
+
+    /* Player vizibil (mic) */
+    .playerWrap{
+      display:none;
+      margin:16px auto 0;
+      width:min(460px, 92vw);
+      aspect-ratio: 16/9;
+      border-radius:18px;
+      overflow:hidden;
+      box-shadow:0 14px 30px rgba(0,0,0,.14);
+      border:1px solid #ffffff80;
+    }
+    .playerWrap iframe{
+      width:100%;
+      height:100%;
+      border:0;
+    }
+
+    .musicRow{
+      display:none;
+      margin-top:14px;
+      gap:10px;
+      justify-content:center;
+      flex-wrap:wrap;
+    }
+    .linkBtn{
+      display:inline-block;
+      text-decoration:none;
+      padding:12px 16px;
+      border-radius:14px;
+      font-weight:800;
+      background:#111827;
+      color:#fff;
+      box-shadow:0 10px 22px rgba(0,0,0,.12);
+    }
   </style>
 </head>
 
 <body>
-
-  <!-- Inima mare -->
   <div class="big-heart" id="bigHeart">❤️</div>
 
-  <!-- YouTube player ascuns -->
-  <div id="ytWrap" style="display:none;">
-    <iframe
-      id="ytPlayer"
-      width="0"
-      height="0"
-      src=""
-      frameborder="0"
-      allow="autoplay; encrypted-media"
-      allowfullscreen>
-    </iframe>
-  </div>
-
-  <!-- Card -->
   <div class="card">
-    <h1>Vrei să fii valentinu’ meu, Ștefan? 💖</h1>
+    <h1>Vrei să fii valentinul meu, Ștefan? 💖</h1>
     <p>
-      De când ai apărut, lucrurile mici au început să însemne mai mult…
-      iar eu aș vrea să te aleg pe tine, azi și în fiecare zi ✨
+      De când ai apărut în viața mea, lucrurile mici au început să însemne mai mult…
+      totul a început să prindă culoare și să aibă sens 
+      iar eu te voi alege în fiecare viață ✨
     </p>
 
     <div class="buttons">
@@ -111,15 +132,46 @@
     </div>
 
     <div class="result" id="result"></div>
+
+    <!-- Butoane fallback pentru muzică -->
+    <div class="musicRow" id="musicRow">
+      <button id="playMusicBtn">Pornește melodia 🎶</button>
+      <a class="linkBtn" id="openYT" target="_blank" rel="noopener">Deschide în YouTube ▶</a>
+    </div>
+
+    <!-- Player YouTube mic (vizibil) -->
+    <div class="playerWrap" id="playerWrap">
+      <iframe
+        id="ytPlayer"
+        src=""
+        allow="autoplay; encrypted-media"
+        allowfullscreen>
+      </iframe>
+    </div>
   </div>
 
   <script>
+    const VIDEO_ID = "MuW6nYTZtIM";
+    const YT_URL = "https://www.youtube.com/watch?v=" + VIDEO_ID;
+
     const yesBtn = document.getElementById('yesBtn');
     const noBtn  = document.getElementById('noBtn');
     const result = document.getElementById('result');
     const heart  = document.getElementById('bigHeart');
-    const yt     = document.getElementById('ytPlayer');
-    const ytWrap = document.getElementById('ytWrap');
+
+    const playerWrap = document.getElementById('playerWrap');
+    const ytPlayer   = document.getElementById('ytPlayer');
+
+    const musicRow   = document.getElementById('musicRow');
+    const playMusicBtn = document.getElementById('playMusicBtn');
+    const openYT = document.getElementById('openYT');
+    openYT.href = YT_URL;
+
+    function startYouTube() {
+      // Player vizibil -> cel mai compatibil pe mobile
+      playerWrap.style.display = "block";
+      ytPlayer.src = `https://www.youtube.com/embed/${VIDEO_ID}?autoplay=1&playsinline=1&rel=0`;
+    }
 
     yesBtn.addEventListener('click', () => {
       result.innerHTML = `
@@ -129,28 +181,31 @@
         și multă iubire ✨
       `;
       result.classList.add('show');
-
       heart.classList.add('show');
 
-      // pornește melodia de pe YouTube
-      yt.src = "https://www.youtube.com/embed/MuW6nYTZtIM?autoplay=1&controls=0&modestbranding=1";
-      ytWrap.style.display = "block";
+      // încercăm să pornim
+      startYouTube();
+
+      // arătăm și fallback-ul (în caz că telefonul tot blochează)
+      musicRow.style.display = "flex";
 
       yesBtn.disabled = true;
       noBtn.disabled = true;
     });
 
+    playMusicBtn.addEventListener('click', () => {
+      startYouTube();
+    });
+
     function moveNo(){
-      const x = Math.random() * (window.innerWidth - 100);
-      const y = Math.random() * (window.innerHeight - 50);
+      const x = Math.random() * (window.innerWidth - 120);
+      const y = Math.random() * (window.innerHeight - 60);
       noBtn.style.position = 'fixed';
       noBtn.style.left = x + 'px';
       noBtn.style.top  = y + 'px';
     }
-
     noBtn.addEventListener('mouseenter', moveNo);
     noBtn.addEventListener('touchstart', moveNo);
   </script>
-
 </body>
 </html>
